@@ -30,9 +30,9 @@ public class WaifuController : MonoBehaviour {
     {
         lastWaifu = Instantiate(WaifuPrefab, WaifuSpawn.transform.position, WaifuSpawn.transform.rotation);
         WaifuSpawn = lastWaifu.transform.GetChild(0).gameObject;
-        lastWaifu.GetComponent<FollowPlayer>().target = target;
-        lastWaifu.GetComponent<FollowPlayer>().followDist = waifuFollowDist;
-        lastWaifu.GetComponent<FollowPlayer>().movSpeed = waifuMovSpeed;
-        lastWaifu.GetComponent<FollowPlayer>().rotSpeed = waifuRotSpeed;
+        lastWaifu.GetComponent<WaifuFollowPlayer>().target = target;
+        lastWaifu.GetComponent<WaifuFollowPlayer>().followDist = waifuFollowDist;
+        lastWaifu.GetComponent<WaifuFollowPlayer>().movSpeed = waifuMovSpeed;
+        lastWaifu.GetComponent<WaifuFollowPlayer>().rotSpeed = waifuRotSpeed;
     }
 }

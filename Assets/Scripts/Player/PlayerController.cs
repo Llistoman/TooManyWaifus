@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
+    public float HP;
     public float movSpeed = 10.0f;
     public Vector3 forward, right, movement;    
     
@@ -16,15 +17,15 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        //update current forwards and right vectors
+        //Update current forwards and right vectors
         GetVectors();
 
-        //move
+        //Move
         Vector3 forwardMovement = forward * movSpeed * Time.deltaTime * Input.GetAxis("Vertical");
         Vector3 rightMovement = right * movSpeed * Time.deltaTime * Input.GetAxis("Horizontal");
 
         movement = Vector3.Normalize(forwardMovement + rightMovement);
-        
+
         transform.forward += movement;
         transform.position += forwardMovement + rightMovement;
     }
@@ -36,5 +37,12 @@ public class PlayerMovement : MonoBehaviour {
         forward = Vector3.Normalize(forward);
         right = Quaternion.Euler(new Vector3(0, 90, 0)) * forward;
         right = Vector3.Normalize(right);
+    }
+
+    public void GetHit(float damage)
+    {
+        HP -= damage;
+        //Game over
+        if (HP <= 0) Destroy(this.gameObject);
     }
 }

@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowPlayer : MonoBehaviour {
+public class WaifuFollowPlayer : MonoBehaviour {
 
     public GameObject target;
     public float followDist;
     public float movSpeed;
     public float rotSpeed;
-    public float dist;
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +20,7 @@ public class FollowPlayer : MonoBehaviour {
         transform.LookAt(target.transform);
         transform.rotation = Quaternion.Slerp(transform.rotation,
             Quaternion.LookRotation(target.transform.position - transform.position), rotSpeed * Time.deltaTime);
-        dist = Vector3.Distance(target.transform.position, transform.position);
+        float dist = Vector3.Distance(target.transform.position, transform.position);
 
         if (dist >= followDist)
         {

@@ -23,9 +23,9 @@ GameObject:
   - component: {fileID: 23095474258979670}
   - component: {fileID: 65309530127111220}
   - component: {fileID: 114701096156059708}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Waifu
-  m_TagString: Untagged
+  m_TagString: Waifu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +38,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4193148532810400}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WaifuSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,3 +137,4 @@ MonoBehaviour:
   target: {fileID: 0}
   followDist: 0
   movSpeed: 0
+  rotSpeed: 0
