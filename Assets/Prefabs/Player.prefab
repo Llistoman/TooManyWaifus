@@ -154,9 +154,9 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &65630251718152076
 BoxCollider:
@@ -217,6 +217,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 5
   movSpeed: 4
-  forward: {x: 0, y: 0, z: 0}
-  right: {x: 0, y: 0, z: 0}
-  movement: {x: 0, y: 0, z: 0}

@@ -135,6 +135,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  followDist: 0
-  movSpeed: 0
-  rotSpeed: 0
+  followDist: 1
+  movSpeed: 4
+  rotSpeed: 4
