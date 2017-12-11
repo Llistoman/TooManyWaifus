@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 54164189332364698}
   - component: {fileID: 114581215568777224}
   - component: {fileID: 114256522193745998}
-  - component: {fileID: 114158268575215590}
+  - component: {fileID: 114363746421204668}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -113,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1866796794423456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 46.6, y: 0.5, z: 0}
+  m_LocalPosition: {x: 13.7, y: 0.5, z: 1.4}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4994484360233950}
@@ -228,23 +228,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114158268575215590
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1866796794423456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ea823c4bd6861c469ede87fa9ebd690, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WaifuSpawn: {fileID: 1077671860972508}
-  WaifuPrefab: {fileID: 1058844594709536, guid: 83e669ff7dc762f42ad8836df462aa40,
-    type: 2}
-  waifuFollowDist: 2
-  waifuMovSpeed: 4
-  waifuRotSpeed: 4
 --- !u!114 &114256522193745998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -261,7 +244,29 @@ MonoBehaviour:
     type: 2}
   bulletSpeed: 10
   bulletRate: 0.2
-  bulletDestroyTime: 4
+  aux: 0
+--- !u!114 &114363746421204668
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1866796794423456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea823c4bd6861c469ede87fa9ebd690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaifuSpawn:
+  - {fileID: 1077671860972508}
+  - {fileID: 1211068033556402}
+  - {fileID: 1375827780923136}
+  WaifuPrefab:
+  - {fileID: 1058844594709536, guid: 83e669ff7dc762f42ad8836df462aa40, type: 2}
+  - {fileID: 1058844594709536, guid: 83e669ff7dc762f42ad8836df462aa40, type: 2}
+  - {fileID: 1058844594709536, guid: 83e669ff7dc762f42ad8836df462aa40, type: 2}
+  Waifus: []
+  waifuRotSpeed: 100
+  i: 0
 --- !u!114 &114581215568777224
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -274,4 +279,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 5
-  movSpeed: 4
+  bossBulletDamage: 1
+  movSpeed: 10
+  rotSpeed: 10
+  forward: {x: 0, y: 0, z: 0}
+  right: {x: 0, y: 0, z: 0}
+  movement: {x: 0, y: 0, z: 0}

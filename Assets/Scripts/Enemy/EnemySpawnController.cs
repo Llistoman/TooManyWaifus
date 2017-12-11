@@ -38,7 +38,6 @@ public class EnemySpawnController : MonoBehaviour {
         GameObject enemyPrefab = enemies[Random.Range(0, enemies.Length - 1)];
         GameObject enemy = Instantiate(enemyPrefab, transform.position, transform.rotation);
         enemy.GetComponent<EnemyController>().target = target;
-        enemy.GetComponent<EnemyController>().target = target;
 
         float elapsedTime = 0;
         while (elapsedTime <= enemyRate)

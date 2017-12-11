@@ -6,10 +6,10 @@ public class PlayerFire : MonoBehaviour {
 
     public GameObject BulletSpawn;
     public GameObject BulletPrefab;
-    public float bulletSpeed = 10.0f;
-    public float bulletRate = 0.2f;
-    public float bulletDestroyTime = 4.0f;
+    public float bulletSpeed;
+    public float bulletRate;
     private bool allowFire;
+    public float aux;
 
 	// Use this for initialization
 	void Start () {
@@ -18,9 +18,9 @@ public class PlayerFire : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        aux = Input.GetAxis("Triggers");
         //fire bullets
-        if (allowFire && (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Joystick1Button0)))
+        if (allowFire && (Input.GetKey(KeyCode.Space) || Input.GetAxis("Triggers") < (-0.5f)))
         {
             allowFire = false;
             StartCoroutine(FireBullet());
@@ -32,7 +32,6 @@ public class PlayerFire : MonoBehaviour {
         GameObject bullet = Instantiate(BulletPrefab, BulletSpawn.transform.position, BulletSpawn.transform.rotation);
         bullet.transform.forward = transform.forward;
         bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
-        Destroy(bullet, bulletDestroyTime);
 
         float elapsedTime = 0;
         while (elapsedTime <= bulletRate)

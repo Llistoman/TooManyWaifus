@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - Waifu
   - Wall
+  - BossBullet
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Waifus
   - Enemies
   - Walls
-  - 
+  - BossBullets
   - 
   - 
   - 

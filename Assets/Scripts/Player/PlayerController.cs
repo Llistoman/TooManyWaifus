@@ -5,8 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public float HP;
-    public float movSpeed = 10.0f;
-    private Vector3 forward, right;
+    public float bossBulletDamage;
+    public float movSpeed;
+    public float rotSpeed;
+    public Vector3 forward, right, movement;
     
     // Use this for initialization
     void Start ()
@@ -24,10 +26,15 @@ public class PlayerController : MonoBehaviour {
         Vector3 forwardMovement = forward * movSpeed * Time.deltaTime * Input.GetAxis("Vertical");
         Vector3 rightMovement = right * movSpeed * Time.deltaTime * Input.GetAxis("Horizontal");
 
-        Vector3 realForward = Vector3.Normalize(forwardMovement + rightMovement);
+        //Forward
+        Vector3 forwardFace = forward * rotSpeed * Time.deltaTime * Input.GetAxis("LeftYaxis");
+        Vector3 rightFace = right * rotSpeed * Time.deltaTime * Input.GetAxis("LeftXaxis");
 
-        //Diagonal movement was bigger, needs to be clamped
-        Vector3 movement = Vector3.ClampMagnitude(forwardMovement + rightMovement, 0.06f);
+        //Normalize for keyboard input
+        Vector3 realForward = Vector3.Normalize(forwardFace + rightFace);
+
+        //Clamp for uniform diagonals (xbox does not need this)
+        movement = Vector3.ClampMagnitude(forwardMovement + rightMovement, 0.08f);
 
         transform.forward += realForward;
         transform.position += movement;
@@ -47,5 +54,14 @@ public class PlayerController : MonoBehaviour {
         HP -= damage;
         //Game over
         if (HP <= 0) Destroy(this.gameObject);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("BossBullet"))
+        {
+            GetHit(bossBulletDamage);
+            Destroy(other.gameObject);
+        }
     }
 }
