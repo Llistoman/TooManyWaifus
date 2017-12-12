@@ -1,0 +1,27 @@
+Canvas + HUD
+	HP
+	level
+	Enemies
+	Boss HP
+	Player Hit -> Ahegao
+	Win
+	GameOver
+Models
+	Player -> Rucadi
+	Boss -> Aina
+	Waifu1 -> re zero trap (felix)
+	Waifu2 -> fate trap (astolfo)
+	Waifu3 -> blend S trap (hanzaki)
+	Wall texture
+	Ground Texture
+Sounds
+	Enemy Hit -> destroy sound
+	Player Hit -> hentai moan
+	Boss -> putosweabos.mp3 every X seconds
+	Win sound
+	GameOver sound
+	menu music
+	level music
+	boss music
+Other
+	every level recover health + waifus
