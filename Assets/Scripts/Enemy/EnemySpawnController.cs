@@ -8,12 +8,14 @@ public class EnemySpawnController : MonoBehaviour {
     public GameObject[] enemies;
     public float enemyRate;
     public float distSpawn;
+    public int numSpawned;
     
     private bool allowSpawn;
     private bool spawning;
 
 	// Use this for initialization
 	void Start () {
+        numSpawned = 0;
         allowSpawn = true;
         spawning = false;
 	}
@@ -32,11 +34,20 @@ public class EnemySpawnController : MonoBehaviour {
         }
     }
 
+    public void Reset()
+    {
+        numSpawned = 0;
+        allowSpawn = true;
+        spawning = false;
+        WaitForSec(5.0f);
+    }
+
     //Spawns random enemies at a certain rate
     IEnumerator SpawnEnemy()
     {
         GameObject enemyPrefab = enemies[Random.Range(0, enemies.Length - 1)];
         GameObject enemy = Instantiate(enemyPrefab, transform.position, transform.rotation);
+        ++numSpawned;
         enemy.GetComponent<EnemyController>().target = target;
 
         float elapsedTime = 0;
@@ -47,6 +58,17 @@ public class EnemySpawnController : MonoBehaviour {
         }
         allowSpawn = true;
         spawning = false;
+        yield return 0;
+    }
+
+    IEnumerator WaitForSec(float time)
+    {
+        float elapsedTime = 0;
+        while (elapsedTime <= time)
+        {
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
         yield return 0;
     }
 }
