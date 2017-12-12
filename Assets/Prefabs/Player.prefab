@@ -278,6 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 110b594321584c14fba09669225ee0ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: {fileID: 0}
   HP: 5
   bossBulletDamage: 1
   movSpeed: 10

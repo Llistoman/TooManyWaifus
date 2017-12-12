@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour {
 
+    public GameObject level;
     public GameObject target;
     public GameObject bulletPrefab;
     public float HP;
@@ -76,7 +77,11 @@ public class BossController : MonoBehaviour {
         {
             HP -= bulletDamage;
             Destroy(collision.gameObject);
-            if (HP <= 0) Destroy(this.gameObject);
+            if (HP <= 0)
+            {
+                level.GetComponent<LevelController>().Win();
+                Destroy(this.gameObject);
+            }
         }
         if (collision.gameObject.CompareTag("Player"))
         {

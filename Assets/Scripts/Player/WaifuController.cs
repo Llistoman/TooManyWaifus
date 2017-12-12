@@ -28,7 +28,7 @@ public class WaifuController : MonoBehaviour {
 		
 	}
 
-    void SpawnWaifu()
+    public void SpawnWaifu()
     {
         GameObject lastWaifu;
         if (i == 0)
@@ -51,14 +51,17 @@ public class WaifuController : MonoBehaviour {
         }
         else if (i == 2)
         {
-            lastWaifu = Instantiate(WaifuPrefab[2], WaifuSpawn[0].transform.position, WaifuSpawn[0].transform.rotation);
-            lastWaifu.GetComponent<WaifuRotation>().target = WaifuSpawn[0].transform;
-            lastWaifu.GetComponent<WaifuRotation>().rotSpeed = waifuRotSpeed;
-            Waifus[2] = lastWaifu;
+            if (Waifus[2] == null)
+            {
+                lastWaifu = Instantiate(WaifuPrefab[2], WaifuSpawn[0].transform.position, WaifuSpawn[0].transform.rotation);
+                lastWaifu.GetComponent<WaifuRotation>().target = WaifuSpawn[0].transform;
+                lastWaifu.GetComponent<WaifuRotation>().rotSpeed = waifuRotSpeed;
+                Waifus[2] = lastWaifu;
+            }
         }
     }
 
-    void DeleteWaifu()
+    public void DeleteWaifu()
     {
         if (i == 0)
         {

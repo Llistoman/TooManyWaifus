@@ -5,10 +5,10 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour {
 
     public GameObject target;
+    public GameObject level;
     public float HP;
     public float attack;
     public float bulletDamage;
-    //public float movSpeed;
     public float rotSpeed;
     private UnityEngine.AI.NavMeshAgent agent;
 
@@ -40,11 +40,17 @@ public class EnemyController : MonoBehaviour {
         {
             HP -= bulletDamage;
             Destroy(collision.gameObject);
-            if (HP <= 0) Destroy(this.gameObject);
+            if (HP <= 0)
+            {
+                level.GetComponent<LevelController>().EnemyDestroyed();
+                Destroy(this.gameObject);
+            }
         }
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<PlayerController>().GetHit(attack);
+            collision.gameObject.GetComponent<WaifuController>().DeleteWaifu();
+            level.GetComponent<LevelController>().EnemyDestroyed();
             Destroy(this.gameObject);
         }        
     }

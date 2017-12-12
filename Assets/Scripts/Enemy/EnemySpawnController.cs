@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class EnemySpawnController : MonoBehaviour {
 
+    public GameObject level;
     public GameObject target;
     public GameObject[] enemies;
     public float enemyRate;
     public float distSpawn;
-    public int numSpawned;
     
     private bool allowSpawn;
     private bool spawning;
 
 	// Use this for initialization
 	void Start () {
-        numSpawned = 0;
         allowSpawn = true;
         spawning = false;
 	}
@@ -34,12 +33,16 @@ public class EnemySpawnController : MonoBehaviour {
         }
     }
 
-    public void Reset()
+    public void Disable()
     {
-        numSpawned = 0;
+        this.gameObject.SetActive(false);
+    }
+
+    public void Enable()
+    {
+        this.gameObject.SetActive(true);
         allowSpawn = true;
         spawning = false;
-        WaitForSec(5.0f);
     }
 
     //Spawns random enemies at a certain rate
@@ -47,8 +50,8 @@ public class EnemySpawnController : MonoBehaviour {
     {
         GameObject enemyPrefab = enemies[Random.Range(0, enemies.Length - 1)];
         GameObject enemy = Instantiate(enemyPrefab, transform.position, transform.rotation);
-        ++numSpawned;
         enemy.GetComponent<EnemyController>().target = target;
+        enemy.GetComponent<EnemyController>().level = level;
 
         float elapsedTime = 0;
         while (elapsedTime <= enemyRate)
@@ -58,6 +61,7 @@ public class EnemySpawnController : MonoBehaviour {
         }
         allowSpawn = true;
         spawning = false;
+        level.GetComponent<LevelController>().EnemySpawned();
         yield return 0;
     }
 

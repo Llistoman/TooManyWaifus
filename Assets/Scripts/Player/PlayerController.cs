@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+    public GameObject level;
     public float HP;
     public float bossBulletDamage;
     public float movSpeed;
@@ -53,7 +54,11 @@ public class PlayerController : MonoBehaviour {
     {
         HP -= damage;
         //Game over
-        if (HP <= 0) Destroy(this.gameObject);
+        if (HP <= 0)
+        {
+            level.GetComponent<LevelController>().GameOver();
+            Destroy(this.gameObject);
+        }
     }
 
     void OnTriggerEnter(Collider other)
