@@ -100,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1077671860972508}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4567249047074628}
@@ -130,7 +130,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1211068033556402}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: 0, z: -2}
+  m_LocalPosition: {x: -2, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4567249047074628}
@@ -143,7 +143,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1375827780923136}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 0, z: -2}
+  m_LocalPosition: {x: 2, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4567249047074628}
@@ -243,8 +243,9 @@ MonoBehaviour:
   BulletPrefab: {fileID: 1231945271594042, guid: d7dbfb3e6d5a40e4f87f0675e8f49804,
     type: 2}
   bulletSpeed: 10
+  realBulletSpeed: 0
   bulletRate: 0.2
-  aux: 0
+  realBulletRate: 0
 --- !u!114 &114363746421204668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -266,7 +267,7 @@ MonoBehaviour:
   - {fileID: 1058844594709536, guid: 83e669ff7dc762f42ad8836df462aa40, type: 2}
   Waifus: []
   waifuRotSpeed: 100
-  i: 0
+  nwaifus: 0
 --- !u!114 &114581215568777224
 MonoBehaviour:
   m_ObjectHideFlags: 1

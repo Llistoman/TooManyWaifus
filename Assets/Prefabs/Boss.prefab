@@ -121,10 +121,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 425c0e3a6beb32f4db63f9b3f0ce7b83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: {fileID: 0}
   target: {fileID: 0}
   bulletPrefab: {fileID: 1961686750847162, guid: d66d56375afa97b4aa8450f9e1678613,
     type: 2}
-  HP: 50
+  HP: 100
   attack: 10
   bulletDamage: 1
   rotSpeed: 1

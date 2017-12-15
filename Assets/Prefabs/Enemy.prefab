@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  level: {fileID: 0}
   HP: 1
   attack: 1
   bulletDamage: 1

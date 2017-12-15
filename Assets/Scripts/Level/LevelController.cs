@@ -75,6 +75,8 @@ public class LevelController : MonoBehaviour {
     void LevelUp()
     {
         Debug.Log("level up");
+        player.GetComponent<WaifuController>().SpawnWaifu();
+        player.GetComponent<PlayerController>().HP += 2;
     }
 
     public void EnemySpawned()
