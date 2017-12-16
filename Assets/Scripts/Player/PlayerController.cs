@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     public GameObject level;
+    public float totalHP;
     public float HP;
     public float bossBulletDamage;
     public float movSpeed;
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        HP = totalHP;
         GetVectors();
 	}
 	
@@ -57,7 +59,7 @@ public class PlayerController : MonoBehaviour {
         if (HP <= 0)
         {
             level.GetComponent<LevelController>().GameOver();
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
     }
 

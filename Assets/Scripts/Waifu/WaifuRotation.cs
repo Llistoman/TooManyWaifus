@@ -18,4 +18,12 @@ public class WaifuRotation : MonoBehaviour {
         transform.position = target.position;
         transform.Rotate(Vector3.up * rotSpeed * Time.deltaTime);
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("BossBullet"))
+        {
+            this.gameObject.transform.parent.GetComponent<WaifuController>().DeleteWaifu();
+        }
+    }
 }

@@ -27,13 +27,10 @@ public class PlayerFire : MonoBehaviour {
             realBulletRate = bulletRate;
             realBulletSpeed = bulletSpeed;
         }
-        if (nwaifus == 1)
+        if (nwaifus >= 1)
         {
-            realBulletSpeed = bulletSpeed * 1.5f;
-        }
-        if (nwaifus == 2)
-        {
-            realBulletRate = bulletRate / 1.5f;
+            realBulletSpeed = bulletSpeed * 2.0f;
+            realBulletRate = bulletRate / 2.0f;
         }
 
         //fire bullets
@@ -46,19 +43,40 @@ public class PlayerFire : MonoBehaviour {
 
     IEnumerator FireBullet()
     {
-        GameObject bullet1 = Instantiate(BulletPrefab, BulletSpawn.transform.position, BulletSpawn.transform.rotation);
-        bullet1.transform.forward = transform.forward;
-        bullet1.GetComponent<Rigidbody>().velocity = bullet1.transform.forward * realBulletSpeed;
-
-        if(nwaifus == 3)
+        //fire patterns
+        if(nwaifus == 0 || nwaifus == 1)
         {
-            GameObject bullet2 = Instantiate(BulletPrefab, BulletSpawn.transform.position, BulletSpawn.transform.rotation);
-            bullet2.transform.forward = transform.forward + transform.right;
+            GameObject bullet1 = Instantiate(BulletPrefab, BulletSpawn.transform.position, BulletSpawn.transform.rotation);
+            bullet1.transform.forward = transform.forward;
+            bullet1.GetComponent<Rigidbody>().velocity = bullet1.transform.forward * realBulletSpeed;
+        }
+        if(nwaifus == 2)
+        {
+            GameObject bullet2 = Instantiate(BulletPrefab, BulletSpawn.transform.position + (0.25f * BulletSpawn.transform.right), BulletSpawn.transform.rotation);
+            bullet2.transform.forward = transform.forward;
             bullet2.GetComponent<Rigidbody>().velocity = bullet2.transform.forward * realBulletSpeed;
 
-            GameObject bullet3 = Instantiate(BulletPrefab, BulletSpawn.transform.position, BulletSpawn.transform.rotation);
-            bullet3.transform.forward = transform.forward - transform.right;
+            GameObject bullet3 = Instantiate(BulletPrefab, BulletSpawn.transform.position - (0.25f * BulletSpawn.transform.right), BulletSpawn.transform.rotation);
+            bullet3.transform.forward = transform.forward;
             bullet3.GetComponent<Rigidbody>().velocity = bullet3.transform.forward * realBulletSpeed;
+        }
+        if(nwaifus == 3)
+        {
+            GameObject bullet2 = Instantiate(BulletPrefab, BulletSpawn.transform.position + (0.25f * BulletSpawn.transform.right), BulletSpawn.transform.rotation);
+            bullet2.transform.forward = transform.forward;
+            bullet2.GetComponent<Rigidbody>().velocity = bullet2.transform.forward * realBulletSpeed;
+
+            GameObject bullet3 = Instantiate(BulletPrefab, BulletSpawn.transform.position - (0.25f * BulletSpawn.transform.right), BulletSpawn.transform.rotation);
+            bullet3.transform.forward = transform.forward;
+            bullet3.GetComponent<Rigidbody>().velocity = bullet3.transform.forward * realBulletSpeed;
+
+            GameObject bullet4 = Instantiate(BulletPrefab, BulletSpawn.transform.position + (0.25f * BulletSpawn.transform.right), BulletSpawn.transform.rotation);
+            bullet4.transform.forward = transform.forward + (transform.forward + transform.right);
+            bullet4.GetComponent<Rigidbody>().velocity = bullet4.transform.forward * realBulletSpeed;
+
+            GameObject bullet5 = Instantiate(BulletPrefab, BulletSpawn.transform.position - (0.25f * BulletSpawn.transform.right), BulletSpawn.transform.rotation);
+            bullet5.transform.forward = transform.forward + (transform.forward - transform.right);
+            bullet5.GetComponent<Rigidbody>().velocity = bullet5.transform.forward * realBulletSpeed;
         }
 
         float elapsedTime = 0;

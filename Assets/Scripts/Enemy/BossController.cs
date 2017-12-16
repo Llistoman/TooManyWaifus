@@ -7,6 +7,7 @@ public class BossController : MonoBehaviour {
     public GameObject level;
     public GameObject target;
     public GameObject bulletPrefab;
+    public float totalHP;
     public float HP;
     public float attack;
     public float bulletDamage;
@@ -18,6 +19,7 @@ public class BossController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         allowFire = true;
+        HP = totalHP;
 	}
 	
 	// Update is called once per frame
@@ -80,7 +82,7 @@ public class BossController : MonoBehaviour {
             if (HP <= 0)
             {
                 level.GetComponent<LevelController>().Win();
-                Destroy(this.gameObject);
+                this.gameObject.SetActive(false);
             }
         }
         if (collision.gameObject.CompareTag("Player"))

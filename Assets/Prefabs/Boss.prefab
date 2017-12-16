@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114131204191461222}
   m_Layer: 11
   m_Name: Boss
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,7 +125,8 @@ MonoBehaviour:
   target: {fileID: 0}
   bulletPrefab: {fileID: 1961686750847162, guid: d66d56375afa97b4aa8450f9e1678613,
     type: 2}
-  HP: 100
+  totalHP: 200
+  HP: 0
   attack: 10
   bulletDamage: 1
   rotSpeed: 1

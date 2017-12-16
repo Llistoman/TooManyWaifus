@@ -12,6 +12,8 @@ public class LevelController : MonoBehaviour {
     public GameObject player;
     public GameObject bossPrefab;
     public GameObject bossSpawn;
+    public GameObject bossHPBar;
+    public GameObject levelBarText;
     public GameObject[] enemySpawns;
     private bool end, disable;
 
@@ -19,6 +21,7 @@ public class LevelController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         level = 1;
+        levelBarText.GetComponent<LevelBarController>().level = level;
         end = false;
         disable = false;
         foreach(GameObject spawn in enemySpawns)
@@ -30,7 +33,9 @@ public class LevelController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(disable == false && currentEnemiesSpawned >= enemiesTotal)
+        levelBarText.GetComponent<LevelBarController>().currentEnemies = currentEnemiesSpawned;
+        levelBarText.GetComponent<LevelBarController>().destroyedEnemies = enemiesDestroyed;
+        if (disable == false && currentEnemiesSpawned >= enemiesTotal)
         {
             disable = true;
             foreach (GameObject spawn in enemySpawns)
@@ -68,6 +73,8 @@ public class LevelController : MonoBehaviour {
                 GameObject boss = Instantiate(bossPrefab, bossSpawn.transform.position, bossSpawn.transform.rotation);
                 boss.GetComponent<BossController>().target = player;
                 boss.GetComponent<BossController>().level = this.gameObject;
+                bossHPBar.GetComponent<HealthBarController>().target = boss;
+                bossHPBar.transform.parent.gameObject.SetActive(true);
             }
         }
 	}
@@ -76,7 +83,9 @@ public class LevelController : MonoBehaviour {
     {
         Debug.Log("level up");
         player.GetComponent<WaifuController>().SpawnWaifu();
+        player.GetComponent<PlayerController>().totalHP += 2;
         player.GetComponent<PlayerController>().HP += 2;
+        levelBarText.GetComponent<LevelBarController>().level = level;
     }
 
     public void EnemySpawned()

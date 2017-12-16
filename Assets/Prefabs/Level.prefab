@@ -4204,13 +4204,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  enemiesTotal: 20
+  enemiesTotal: 10
   enemiesDestroyed: 0
   currentEnemiesSpawned: 0
   enemyRate: 3
   player: {fileID: 0}
   bossPrefab: {fileID: 1513432212342884, guid: 45249e91133c7a548a6b59be4b8a3fd2, type: 2}
   bossSpawn: {fileID: 1363771892746578}
+  bossHPBar: {fileID: 0}
+  levelBarText: {fileID: 0}
   enemySpawns:
   - {fileID: 1093122957087762}
   - {fileID: 1293254226624794}

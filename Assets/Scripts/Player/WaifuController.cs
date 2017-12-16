@@ -9,11 +9,9 @@ public class WaifuController : MonoBehaviour {
     public GameObject[] Waifus;
     public float waifuRotSpeed;
     public int nwaifus;
-    private int i;
 
 	// Use this for initialization
 	void Start () {
-        i = 0;
         nwaifus = 0;
         Waifus = new GameObject[3];
         //testing
@@ -32,35 +30,34 @@ public class WaifuController : MonoBehaviour {
 
     public void SpawnWaifu()
     {
-        GameObject lastWaifu;
-        if (i == 0)
+        if(nwaifus == 0)
         {
-            lastWaifu = Instantiate(WaifuPrefab[0], WaifuSpawn[0].transform.position, WaifuSpawn[0].transform.rotation);
-            lastWaifu.GetComponent<WaifuRotation>().target = WaifuSpawn[0].transform;
-            lastWaifu.GetComponent<WaifuRotation>().rotSpeed = waifuRotSpeed;
-            Waifus[0] = lastWaifu;
+            Waifus[0] = Instantiate(WaifuPrefab[0], WaifuSpawn[0].transform.position, WaifuSpawn[0].transform.rotation);
+            Waifus[0].transform.parent = this.gameObject.transform;
+            Waifus[0].GetComponent<WaifuRotation>().target = WaifuSpawn[0].transform;
+            Waifus[0].GetComponent<WaifuRotation>().rotSpeed = waifuRotSpeed;
             ++nwaifus;
-            ++i;
         }
-        else if (i == 1)
+        else if(nwaifus == 1)
         {
-            //symmetric positions
-            lastWaifu = Instantiate(WaifuPrefab[1], WaifuSpawn[2].transform.position, WaifuSpawn[2].transform.rotation);
-            lastWaifu.GetComponent<WaifuRotation>().target = WaifuSpawn[2].transform;
-            lastWaifu.GetComponent<WaifuRotation>().rotSpeed = waifuRotSpeed;
-            Waifus[1] = lastWaifu;
-            Waifus[0].GetComponent<WaifuRotation>().target = WaifuSpawn[1].transform;
+            Waifus[1] = Waifus[0];
+            Waifus[1].GetComponent<WaifuRotation>().target = WaifuSpawn[1].transform;
+            Waifus[1].transform.rotation = WaifuSpawn[1].transform.rotation;
+            Waifus[0] = null;
+            Waifus[2] = Instantiate(WaifuPrefab[1], WaifuSpawn[2].transform.position, WaifuSpawn[2].transform.rotation);
+            Waifus[2].transform.parent = this.gameObject.transform;
+            Waifus[2].GetComponent<WaifuRotation>().target = WaifuSpawn[2].transform;
+            Waifus[2].GetComponent<WaifuRotation>().rotSpeed = waifuRotSpeed;
             ++nwaifus;
-            ++i;
         }
-        else if (i == 2)
+        else if(nwaifus == 2)
         {
-            if (Waifus[2] == null)
+            if(Waifus[0] == null)
             {
-                lastWaifu = Instantiate(WaifuPrefab[2], WaifuSpawn[0].transform.position, WaifuSpawn[0].transform.rotation);
-                lastWaifu.GetComponent<WaifuRotation>().target = WaifuSpawn[0].transform;
-                lastWaifu.GetComponent<WaifuRotation>().rotSpeed = waifuRotSpeed;
-                Waifus[2] = lastWaifu;
+                Waifus[0] = Instantiate(WaifuPrefab[0], WaifuSpawn[0].transform.position, WaifuSpawn[0].transform.rotation);
+                Waifus[0].transform.parent = this.gameObject.transform;
+                Waifus[0].GetComponent<WaifuRotation>().target = WaifuSpawn[0].transform;
+                Waifus[0].GetComponent<WaifuRotation>().rotSpeed = waifuRotSpeed;
                 ++nwaifus;
             }
         }
@@ -68,7 +65,7 @@ public class WaifuController : MonoBehaviour {
 
     public void DeleteWaifu()
     {
-        if (i == 0)
+        if (nwaifus == 1)
         {
             if (Waifus[0] != null)
             {
@@ -77,37 +74,20 @@ public class WaifuController : MonoBehaviour {
                 --nwaifus;
             }
         }
-        else if (i == 1)
+        else if (nwaifus == 2)
         {
-            if (Waifus[1] != null)
-            {
-                Waifus[1].GetComponent<WaifuDestroy>().DestroyWaifu();
-                Waifus[0].GetComponent<WaifuRotation>().target = WaifuSpawn[0].transform;
-                Waifus[1] = null;
-            }
-            else
-            {
-                Waifus[0].GetComponent<WaifuDestroy>().DestroyWaifu();
-                Waifus[0] = null;
-            }            
+            Waifus[0] = Waifus[1];
+            Waifus[0].GetComponent<WaifuRotation>().target = WaifuSpawn[0].transform;
+            Waifus[1] = null;
+            Waifus[2].GetComponent<WaifuDestroy>().DestroyWaifu();
+            Waifus[2] = null;
             --nwaifus;
-            --i;
         }
-        else if (i == 2)
+        else if (nwaifus == 3)
         {
-            if(Waifus[2] != null)
-            {
-                Waifus[2].GetComponent<WaifuDestroy>().DestroyWaifu();
-                Waifus[2] = null;
-            }
-            else
-            {
-                Waifus[1].GetComponent<WaifuDestroy>().DestroyWaifu();
-                Waifus[0].GetComponent<WaifuRotation>().target = WaifuSpawn[0].transform;
-                Waifus[1] = null;
-            }
+            Waifus[0].GetComponent<WaifuDestroy>().DestroyWaifu();
+            Waifus[0] = null;
             --nwaifus;
-            --i;
         }
-    }
+    }   
 }

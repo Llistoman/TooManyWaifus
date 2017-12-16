@@ -9,6 +9,7 @@ TagManager:
   - Waifu
   - Wall
   - BossBullet
+  - Boss
   layers:
   - Default
   - TransparentFX

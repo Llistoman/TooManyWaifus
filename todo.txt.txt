@@ -1,8 +1,4 @@
 Canvas + HUD
-	HP
-	level
-	Enemies
-	Boss HP
 	Player Hit -> Ahegao
 	Win
 	GameOver
@@ -23,5 +19,3 @@ Sounds
 	menu music
 	level music
 	boss music
-Other
-	every level recover health + waifus

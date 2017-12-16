@@ -52,7 +52,13 @@ public class EnemyController : MonoBehaviour {
             collision.gameObject.GetComponent<WaifuController>().DeleteWaifu();
             level.GetComponent<LevelController>().EnemyDestroyed();
             Destroy(this.gameObject);
-        }        
+        }
+        if (collision.gameObject.CompareTag("Waifu"))
+        {
+            collision.gameObject.transform.parent.gameObject.GetComponent<WaifuController>().DeleteWaifu();
+            level.GetComponent<LevelController>().EnemyDestroyed();
+            Destroy(this.gameObject);
+        }
     }
 }
 
