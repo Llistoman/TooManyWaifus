@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WaifuController : MonoBehaviour {
 
+    public GameObject level;
     public GameObject[] WaifuSpawn;
     public GameObject[] WaifuPrefab;
     public GameObject[] Waifus;
@@ -54,7 +55,7 @@ public class WaifuController : MonoBehaviour {
         {
             if(Waifus[0] == null)
             {
-                Waifus[0] = Instantiate(WaifuPrefab[0], WaifuSpawn[0].transform.position, WaifuSpawn[0].transform.rotation);
+                Waifus[0] = Instantiate(WaifuPrefab[2], WaifuSpawn[0].transform.position, WaifuSpawn[0].transform.rotation);
                 Waifus[0].transform.parent = this.gameObject.transform;
                 Waifus[0].GetComponent<WaifuRotation>().target = WaifuSpawn[0].transform;
                 Waifus[0].GetComponent<WaifuRotation>().rotSpeed = waifuRotSpeed;
@@ -71,6 +72,7 @@ public class WaifuController : MonoBehaviour {
             {
                 Waifus[0].GetComponent<WaifuDestroy>().DestroyWaifu();
                 Waifus[0] = null;
+                level.GetComponent<LevelController>().WaifuHitImage(1);
                 --nwaifus;
             }
         }
@@ -81,12 +83,14 @@ public class WaifuController : MonoBehaviour {
             Waifus[1] = null;
             Waifus[2].GetComponent<WaifuDestroy>().DestroyWaifu();
             Waifus[2] = null;
+            level.GetComponent<LevelController>().WaifuHitImage(2);
             --nwaifus;
         }
         else if (nwaifus == 3)
         {
             Waifus[0].GetComponent<WaifuDestroy>().DestroyWaifu();
             Waifus[0] = null;
+            level.GetComponent<LevelController>().WaifuHitImage(3);
             --nwaifus;
         }
     }   

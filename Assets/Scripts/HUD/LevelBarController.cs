@@ -16,6 +16,7 @@ public class LevelBarController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         int enemies = currentEnemies - destroyedEnemies;
+        if (enemies < 0) enemies = 0;
         if (level != 5)
             GetComponent<Text>().text = ("Lvl: " + level.ToString() + " / Enemies: " + enemies.ToString());
         else

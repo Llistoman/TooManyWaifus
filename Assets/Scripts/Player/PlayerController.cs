@@ -67,6 +67,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("BossBullet"))
         {
+            level.GetComponent<LevelController>().PlayerHit();
             GetHit(bossBulletDamage);
             this.gameObject.GetComponent<WaifuController>().DeleteWaifu();
             Destroy(other.gameObject);

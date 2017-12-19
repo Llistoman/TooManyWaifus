@@ -48,6 +48,7 @@ public class EnemyController : MonoBehaviour {
         }
         if (collision.gameObject.CompareTag("Player"))
         {
+            level.GetComponent<LevelController>().PlayerHit();
             collision.gameObject.GetComponent<PlayerController>().GetHit(attack);
             collision.gameObject.GetComponent<WaifuController>().DeleteWaifu();
             level.GetComponent<LevelController>().EnemyDestroyed();

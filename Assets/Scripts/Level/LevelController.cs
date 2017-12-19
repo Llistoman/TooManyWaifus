@@ -9,11 +9,18 @@ public class LevelController : MonoBehaviour {
     public int enemiesDestroyed;
     public int currentEnemiesSpawned;
     public float enemyRate;
+    public float imageTime;
     public GameObject player;
     public GameObject bossPrefab;
     public GameObject bossSpawn;
     public GameObject bossHPBar;
     public GameObject levelBarText;
+    public GameObject playerHitImage;
+    public GameObject waifu1HitImage;
+    public GameObject waifu2HitImage;
+    public GameObject waifu3HitImage;
+    public GameObject winImage;
+    public GameObject gameOverImage;
     public GameObject[] enemySpawns;
     private bool end, disable;
 
@@ -83,9 +90,36 @@ public class LevelController : MonoBehaviour {
     {
         Debug.Log("level up");
         player.GetComponent<WaifuController>().SpawnWaifu();
-        player.GetComponent<PlayerController>().totalHP += 2;
         player.GetComponent<PlayerController>().HP += 2;
+        if (player.GetComponent<PlayerController>().HP > player.GetComponent<PlayerController>().totalHP)
+        player.GetComponent<PlayerController>().totalHP = player.GetComponent<PlayerController>().HP;
+        
         levelBarText.GetComponent<LevelBarController>().level = level;
+    }
+
+    IEnumerator ImageDisplay(GameObject image)
+    {
+        image.SetActive(true);
+        float elapsedTime = 0.0f;
+        while (elapsedTime <= imageTime)
+        {
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        image.SetActive(false);
+        yield return 0;
+    }
+
+    public void PlayerHit()
+    {
+        StartCoroutine(ImageDisplay(playerHitImage));
+    }
+
+    public void WaifuHitImage(int i)
+    {
+        if (i == 1) StartCoroutine(ImageDisplay(waifu1HitImage));
+        if (i == 2) StartCoroutine(ImageDisplay(waifu2HitImage));
+        if (i == 3) StartCoroutine(ImageDisplay(waifu3HitImage));
     }
 
     public void EnemySpawned()
@@ -101,10 +135,14 @@ public class LevelController : MonoBehaviour {
     public void Win()
     {
         Debug.Log("WIN");
+        winImage.SetActive(true);
+        Time.timeScale = 0.0f;
     }
 
     public void GameOver()
     {
         Debug.Log("GAME OVER");
+        gameOverImage.SetActive(true);
+        Time.timeScale = 0.0f;
     }
 }

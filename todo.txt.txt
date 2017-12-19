@@ -1,15 +1,7 @@
 Canvas + HUD
-	Player Hit -> Ahegao
-	Win
-	GameOver
-Models
-	Player -> Rucadi
-	Boss -> Aina
-	Waifu1 -> re zero trap (felix)
-	Waifu2 -> fate trap (astolfo)
-	Waifu3 -> blend S trap (hanzaki)
-	Wall texture
-	Ground Texture
+	Menu
+	Win Menu
+	GameOver Menu
 Sounds
 	Enemy Hit -> destroy sound
 	Player Hit -> hentai moan
