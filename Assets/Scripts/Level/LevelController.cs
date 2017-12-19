@@ -21,6 +21,7 @@ public class LevelController : MonoBehaviour {
     public GameObject waifu3HitImage;
     public GameObject winImage;
     public GameObject gameOverImage;
+    public GameObject pauseMenu;
     public GameObject[] enemySpawns;
     private bool end, disable;
 
@@ -40,6 +41,12 @@ public class LevelController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if(Input.GetKey(KeyCode.Escape) || Input.GetKey(KeyCode.Joystick1Button7))
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0.0f;
+        }
+        
         levelBarText.GetComponent<LevelBarController>().currentEnemies = currentEnemiesSpawned;
         levelBarText.GetComponent<LevelBarController>().destroyedEnemies = enemiesDestroyed;
         if (disable == false && currentEnemiesSpawned >= enemiesTotal)
