@@ -43,6 +43,7 @@ public class EnemyController : MonoBehaviour {
             if (HP <= 0)
             {
                 level.GetComponent<LevelController>().EnemyDestroyed();
+                level.GetComponent<AudioManager>().PlayDestroyEnemy();
                 Destroy(this.gameObject);
             }
         }
@@ -52,12 +53,14 @@ public class EnemyController : MonoBehaviour {
             collision.gameObject.GetComponent<PlayerController>().GetHit(attack);
             collision.gameObject.GetComponent<WaifuController>().DeleteWaifu();
             level.GetComponent<LevelController>().EnemyDestroyed();
+            level.GetComponent<AudioManager>().PlayDestroyEnemy();
             Destroy(this.gameObject);
         }
         if (collision.gameObject.CompareTag("Waifu"))
         {
             collision.gameObject.transform.parent.gameObject.GetComponent<WaifuController>().DeleteWaifu();
             level.GetComponent<LevelController>().EnemyDestroyed();
+            level.GetComponent<AudioManager>().PlayDestroyEnemy();
             Destroy(this.gameObject);
         }
     }

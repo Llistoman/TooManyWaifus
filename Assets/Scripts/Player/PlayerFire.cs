@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerFire : MonoBehaviour {
 
+    public GameObject level;
     public GameObject BulletSpawn;
     public GameObject BulletPrefab;
     public float bulletSpeed;
@@ -37,6 +38,7 @@ public class PlayerFire : MonoBehaviour {
         if (allowFire && (Input.GetKey(KeyCode.Space) || Input.GetAxis("Triggers") < (-0.5f)))
         {
             allowFire = false;
+            
             StartCoroutine(FireBullet());
         }
     }
@@ -86,6 +88,7 @@ public class PlayerFire : MonoBehaviour {
             yield return new WaitForEndOfFrame();
         }
         allowFire = true;
+        level.GetComponent<AudioManager>().PlayFire();
         yield return 0;
     }
 }

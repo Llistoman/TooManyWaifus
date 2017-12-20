@@ -1,7 +1,3 @@
-Canvas + HUD
-	Menu
-	Win Menu
-	GameOver Menu
 Sounds
 	Enemy Hit -> destroy sound
 	Player Hit -> hentai moan

@@ -20,17 +20,18 @@ public class LevelController : MonoBehaviour {
     public GameObject waifu2HitImage;
     public GameObject waifu3HitImage;
     public GameObject winImage;
+    public GameObject winGameOverMenu;
     public GameObject gameOverImage;
     public GameObject pauseMenu;
     public GameObject[] enemySpawns;
-    private bool end, disable;
+    private bool disable;
 
 
 	// Use this for initialization
 	void Start () {
         level = 1;
         levelBarText.GetComponent<LevelBarController>().level = level;
-        end = false;
+        GetComponent<AudioManager>().PlayCombatMusic();
         disable = false;
         foreach(GameObject spawn in enemySpawns)
         {
@@ -100,7 +101,6 @@ public class LevelController : MonoBehaviour {
         player.GetComponent<PlayerController>().HP += 2;
         if (player.GetComponent<PlayerController>().HP > player.GetComponent<PlayerController>().totalHP)
         player.GetComponent<PlayerController>().totalHP = player.GetComponent<PlayerController>().HP;
-        
         levelBarText.GetComponent<LevelBarController>().level = level;
     }
 
@@ -119,11 +119,13 @@ public class LevelController : MonoBehaviour {
 
     public void PlayerHit()
     {
+        GetComponent<AudioManager>().PlayMoan();
         StartCoroutine(ImageDisplay(playerHitImage));
     }
 
     public void WaifuHitImage(int i)
     {
+        GetComponent<AudioManager>().PlayMoan();
         if (i == 1) StartCoroutine(ImageDisplay(waifu1HitImage));
         if (i == 2) StartCoroutine(ImageDisplay(waifu2HitImage));
         if (i == 3) StartCoroutine(ImageDisplay(waifu3HitImage));
@@ -143,6 +145,8 @@ public class LevelController : MonoBehaviour {
     {
         Debug.Log("WIN");
         winImage.SetActive(true);
+        winGameOverMenu.SetActive(true);
+        GetComponent<AudioManager>().PlayWinMusic();
         Time.timeScale = 0.0f;
     }
 
@@ -150,6 +154,8 @@ public class LevelController : MonoBehaviour {
     {
         Debug.Log("GAME OVER");
         gameOverImage.SetActive(true);
+        winGameOverMenu.SetActive(true);
+        GetComponent<AudioManager>().PlayGameOverMusic();
         Time.timeScale = 0.0f;
     }
 }

@@ -37,6 +37,7 @@ public class BossController : MonoBehaviour {
         if (allowFire)
         {
             allowFire = false;
+            level.GetComponent<AudioManager>().PlayFire();
             StartCoroutine(FirePattern());
         }
     }
