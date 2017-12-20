@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 4859000088051048}
   - component: {fileID: 114193385746567144}
   m_Layer: 0
-  m_Name: EnemySpawn
+  m_Name: EnemySpawn (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -702,6 +702,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
   m_IsActive: 1
+--- !u!1 &1828672092128040
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4679753284020598}
+  - component: {fileID: 114524001809655528}
+  m_Layer: 0
+  m_Name: EnemySpawn (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1834445802062620
 GameObject:
   m_ObjectHideFlags: 1
@@ -802,6 +818,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
   m_IsActive: 1
+--- !u!1 &1936515866600730
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4406811930990004}
+  - component: {fileID: 114025776734995646}
+  m_Layer: 0
+  m_Name: EnemySpawn (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1951238813789540
 GameObject:
   m_ObjectHideFlags: 1
@@ -813,6 +845,22 @@ GameObject:
   - component: {fileID: 114452409339853148}
   m_Layer: 0
   m_Name: EnemySpawn (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!1 &1956991772725046
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4025073945416850}
+  - component: {fileID: 114124310449056608}
+  m_Layer: 0
+  m_Name: EnemySpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -899,6 +947,19 @@ Transform:
   m_Father: {fileID: 4819541636899944}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!4 &4025073945416850
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1956991772725046}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.76, y: 0.07, z: 2.16}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_Children: []
+  m_Father: {fileID: 4300115158957902}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4064689075802756
 Transform:
   m_ObjectHideFlags: 1
@@ -1000,7 +1061,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1293254226624794}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.53, y: 0.07, z: -4.34}
+  m_LocalPosition: {x: 0.01, y: 0.07, z: 2}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 4300115158957902}
@@ -1133,13 +1194,16 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4859000088051048}
+  - {fileID: 4025073945416850}
   - {fileID: 4158908830662264}
   - {fileID: 4607512985578666}
   - {fileID: 4754774308346202}
   - {fileID: 4976378865343680}
   - {fileID: 4108317277320658}
   - {fileID: 4585239915797858}
+  - {fileID: 4679753284020598}
+  - {fileID: 4406811930990004}
+  - {fileID: 4859000088051048}
   m_Father: {fileID: 4139276626020102}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1194,6 +1258,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4819541636899944}
   m_RootOrder: 28
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4406811930990004
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1936515866600730}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.51, y: 0.07, z: 4.52}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_Children: []
+  m_Father: {fileID: 4300115158957902}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4442777303015128
 Transform:
@@ -1298,6 +1375,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4300115158957902}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4679753284020598
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1828672092128040}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.18, y: 0.07, z: -1.81}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_Children: []
+  m_Father: {fileID: 4300115158957902}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4683877835678832
 Transform:
@@ -1418,11 +1508,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1093122957087762}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.76, y: 0.07, z: 2.16}
+  m_LocalPosition: {x: -2.19, y: 0.07, z: -4.37}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 4300115158957902}
-  m_RootOrder: 0
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4907851139519994
 Transform:
@@ -3816,7 +3906,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -3890,8 +3980,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.1
+  m_Pitch: 0.8
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -3970,7 +4060,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4210,6 +4300,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d73dcd921eecf49b9317edd9250b98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114025776734995646
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1936515866600730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07f7dda9feb6d743b7d07fa131e25c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: {fileID: 1506327525124890}
+  target: {fileID: 0}
+  enemies:
+  - {fileID: 1599060384487252, guid: 9d88af2265ba4024aada2907669b96f5, type: 2}
+  enemyRate: 3
+  distSpawn: 5
 --- !u!114 &114028277174949134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4277,6 +4384,23 @@ MonoBehaviour:
   DestroySource: {fileID: 82699276169307162}
   MoanSource: {fileID: 82244326773963470}
   LevelSource: {fileID: 82287272199023578}
+--- !u!114 &114124310449056608
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1956991772725046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07f7dda9feb6d743b7d07fa131e25c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: {fileID: 1506327525124890}
+  target: {fileID: 0}
+  enemies:
+  - {fileID: 1599060384487252, guid: 9d88af2265ba4024aada2907669b96f5, type: 2}
+  enemyRate: 3
+  distSpawn: 5
 --- !u!114 &114168176192029928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4499,6 +4623,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d73dcd921eecf49b9317edd9250b98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114524001809655528
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1828672092128040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07f7dda9feb6d743b7d07fa131e25c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: {fileID: 1506327525124890}
+  target: {fileID: 0}
+  enemies:
+  - {fileID: 1599060384487252, guid: 9d88af2265ba4024aada2907669b96f5, type: 2}
+  enemyRate: 3
+  distSpawn: 5
 --- !u!114 &114540033372343660
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4633,10 +4774,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
-  enemiesTotal: 10
+  enemiesTotal: 30
   enemiesDestroyed: 0
   currentEnemiesSpawned: 0
-  enemyRate: 3
+  enemyRate: 1.6
   imageTime: 1
   player: {fileID: 0}
   bossPrefab: {fileID: 1513432212342884, guid: 45249e91133c7a548a6b59be4b8a3fd2, type: 2}
@@ -4652,13 +4793,16 @@ MonoBehaviour:
   gameOverImage: {fileID: 0}
   pauseMenu: {fileID: 0}
   enemySpawns:
-  - {fileID: 1093122957087762}
+  - {fileID: 1956991772725046}
   - {fileID: 1293254226624794}
   - {fileID: 1475127225203332}
   - {fileID: 1573617447932814}
   - {fileID: 1951238813789540}
   - {fileID: 1040184120417984}
   - {fileID: 1619792263172840}
+  - {fileID: 1828672092128040}
+  - {fileID: 1936515866600730}
+  - {fileID: 1093122957087762}
 --- !u!114 &114814878151618784
 MonoBehaviour:
   m_ObjectHideFlags: 1

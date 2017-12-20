@@ -2102,6 +2102,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114193385746567144, guid: 55f66c25570a88842932a5c2d2d46b65,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 51578253}
+    - target: {fileID: 114025776734995646, guid: 55f66c25570a88842932a5c2d2d46b65,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 51578253}
+    - target: {fileID: 114524001809655528, guid: 55f66c25570a88842932a5c2d2d46b65,
+        type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 51578253}
     - target: {fileID: 114932462374977198, guid: 55f66c25570a88842932a5c2d2d46b65,
         type: 2}
       propertyPath: target
@@ -2187,30 +2202,20 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 51578253}
-    - target: {fileID: 114193385746567144, guid: 55f66c25570a88842932a5c2d2d46b65,
+    - target: {fileID: 114124310449056608, guid: 55f66c25570a88842932a5c2d2d46b65,
         type: 2}
       propertyPath: target
       value: 
       objectReference: {fileID: 51578253}
-    - target: {fileID: 82287272199023578, guid: 55f66c25570a88842932a5c2d2d46b65,
+    - target: {fileID: 82749991088688742, guid: 55f66c25570a88842932a5c2d2d46b65,
         type: 2}
-      propertyPath: Priority
-      value: 1
+      propertyPath: m_Volume
+      value: 0.05
       objectReference: {fileID: 0}
-    - target: {fileID: 82287272199023578, guid: 55f66c25570a88842932a5c2d2d46b65,
+    - target: {fileID: 82699276169307162, guid: 55f66c25570a88842932a5c2d2d46b65,
         type: 2}
-      propertyPath: m_Pitch
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 82244326773963470, guid: 55f66c25570a88842932a5c2d2d46b65,
-        type: 2}
-      propertyPath: Priority
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 82244326773963470, guid: 55f66c25570a88842932a5c2d2d46b65,
-        type: 2}
-      propertyPath: m_Pitch
-      value: 1
+      propertyPath: m_Volume
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 55f66c25570a88842932a5c2d2d46b65, type: 2}

@@ -31,8 +31,8 @@ public class PlayerController : MonoBehaviour {
 
         //Forward
         Vector3 forwardFace = forward * rotSpeed * Time.deltaTime * Input.GetAxis("LeftYaxis");
-        Vector3 rightFace = right * rotSpeed * Time.deltaTime * Input.GetAxis("LeftXaxis");       
-
+        Vector3 rightFace = right * rotSpeed * Time.deltaTime * Input.GetAxis("LeftXaxis");
+        
         //Normalize for keyboard input
         Vector3 realForward = Vector3.Normalize(forwardFace + rightFace);
 

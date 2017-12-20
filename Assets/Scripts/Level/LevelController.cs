@@ -68,7 +68,7 @@ public class LevelController : MonoBehaviour {
             disable = false;
             if(level != 5)
             {
-                enemiesTotal += 10;
+                enemiesTotal += 20;
                 if(enemyRate - 0.2f > 0) enemyRate -= 0.2f;
                 foreach (GameObject spawn in enemySpawns)
                 {
@@ -97,6 +97,7 @@ public class LevelController : MonoBehaviour {
     void LevelUp()
     {
         Debug.Log("level up");
+        GetComponent<AudioManager>().PlayLevelUp();
         player.GetComponent<WaifuController>().SpawnWaifu();
         player.GetComponent<PlayerController>().HP += 2;
         if (player.GetComponent<PlayerController>().HP > player.GetComponent<PlayerController>().totalHP)
